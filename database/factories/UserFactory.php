@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Owner;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -40,5 +42,16 @@ class UserFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function(User $user) {
+            $owner = Owner::factory()->create([
+                'display_name' => $user->name,
+            ]);
+            $user->owner_id = $owner->id;
+            $user->save();
+        });
     }
 }

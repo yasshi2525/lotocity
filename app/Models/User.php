@@ -32,6 +32,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function owner() {
+        return $this->belongsTo(Owner::class);
+    }
+
     /**
      * Get the attributes that should be cast.
      *
