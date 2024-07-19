@@ -46,7 +46,7 @@ class UserFactory extends Factory
 
     public function configure()
     {
-        return $this->afterCreating(function(User $user) {
+        return $this->afterCreating(function (User $user) {
             $owner = Owner::factory()->create([
                 'display_name' => $user->name,
             ]);

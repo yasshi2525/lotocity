@@ -32,7 +32,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function owner() {
+    public function owner()
+    {
         return $this->belongsTo(Owner::class);
     }
 

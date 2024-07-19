@@ -13,11 +13,13 @@ class Owner extends Model
         'display_name',
     ];
 
-    public function company() {
+    public function company()
+    {
         return $this->hasOne(Company::class);
     }
 
-    public function user() {
+    public function user()
+    {
         return $this->hasOne(User::class);
     }
 }

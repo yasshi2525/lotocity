@@ -25,7 +25,7 @@ class OwnerFactory extends Factory
 
     public function configure()
     {
-        return $this->afterCreating(function(Owner $owner) {
+        return $this->afterCreating(function (Owner $owner) {
             Company::factory()->for($owner)->create();
         });
     }

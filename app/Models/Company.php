@@ -15,7 +15,8 @@ class Company extends Model
         'cash',
     ];
 
-    public function owner() {
+    public function owner()
+    {
         return $this->belongsTo(Owner::class);
     }
 }
