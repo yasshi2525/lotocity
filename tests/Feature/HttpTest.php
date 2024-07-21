@@ -18,6 +18,6 @@ class HttpTest extends TestCase
 
     public static function provider()
     {
-        return [['/loto'], ['/deal'], ['/stat']];
+        return [['/'], ['/loto'], ['/deal'], ['/stat']];
     }
 }
